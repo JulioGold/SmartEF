@@ -1,15 +1,10 @@
-# SmartEF
-Simple library with EF helpers  
+﻿using SmartEF;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
-```
-Install-Package SmartEF
-```  
-
-## Usage
-
-Bellow a sample  
-
-```csharp
+namespace Run
+{
     class Program
     {
         static void Main(string[] args)
@@ -40,6 +35,4 @@ Bellow a sample
         [Column("DESCRIPTION")]
         public string Description { get; set; }
     }
-```
-  
-Danke   
+}

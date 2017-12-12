@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>SmartEF</id>
+    <title>SmartEF</title>
+    <description>Simple library with EF helpers.</description>
+    <version>0.0.1</version>
+    <authors>JulioGold</authors>
+    <owners>JulioGold</owners>
+    <licenseUrl>https://raw.githubusercontent.com/JulioGold/SmartEF/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/JulioGold/SmartEF</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<releaseNotes>Project created.</releaseNotes>-->
+    <copyright>Copyright 2017</copyright>
+    <tags>smart entity framework EF helper</tags>
+    <!--<dependencies>
+      <dependency id="Net.Http.WebApi.OData" version="3.3.6"  />
+      <dependency id="RazorEngine" version="3.8.1"  />
+    </dependencies>-->
+  </metadata>
+</package>
