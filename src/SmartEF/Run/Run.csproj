@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartEF\SmartEF.csproj">
-      <Project>{1B1A379C-25D5-4142-AC2E-290262A6201F}</Project>
+      <Project>{e720fc9f-3cff-40db-aab0-c85b4ff20f8a}</Project>
       <Name>SmartEF</Name>
     </ProjectReference>
   </ItemGroup>
