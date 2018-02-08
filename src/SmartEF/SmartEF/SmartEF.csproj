@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net45;net451;net452;net46;net461</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <PackageLicenseUrl>https://raw.githubusercontent.com/JulioGold/SmartEF/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/JulioGold/SmartEF</PackageProjectUrl>
     <Copyright>Copyright 2017</Copyright>

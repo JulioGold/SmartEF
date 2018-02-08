@@ -23,7 +23,11 @@ namespace Run
             Console.WriteLine(cmd3);
             Console.WriteLine(cmd4);
             Console.WriteLine(cmd5);
-            
+
+            var columnsName = Helper.GetDBColumnsName<MyTableEntity>();
+
+            Console.WriteLine(String.Join(",", columnsName));
+
             Console.ReadKey();
         }
     }

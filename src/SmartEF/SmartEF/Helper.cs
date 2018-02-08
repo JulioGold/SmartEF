@@ -45,6 +45,26 @@ namespace SmartEF
         }
 
         /// <summary>
+        /// Get the columns name according with passed entity.
+        /// </summary>
+        /// <typeparam name="TTableEntity">Entity with data annotation.</typeparam>
+        /// <returns></returns>
+        public static List<string> GetDBColumnsName<TTableEntity>() where TTableEntity : class
+        {
+            var columnsName = (typeof(TTableEntity)
+                .GetProperties()?
+                .Where(p => p.GetCustomAttributes(typeof(System.ComponentModel.DataAnnotations.Schema.ColumnAttribute), inherit: true).Any())?
+                .ToList()
+                .SelectMany(ff => ff.CustomAttributes?
+                    .Where(w => w.AttributeType == typeof(System.ComponentModel.DataAnnotations.Schema.ColumnAttribute))?
+                    .Select(sss => sss.ConstructorArguments.Select(s => s.Value as string).ToList()))
+                .SelectMany(s => s.ToList())
+                .ToList());
+
+            return columnsName;
+        }
+
+        /// <summary>
         /// Generate the SQL statement for deletion of one or many records.
         /// </summary>
         /// <param name="ids">Id list.</param>
