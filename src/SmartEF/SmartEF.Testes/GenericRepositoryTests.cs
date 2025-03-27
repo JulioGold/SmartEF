@@ -67,6 +67,32 @@ namespace SmartEF.Testes
         }
 
         [Fact]
+        public async Task Dado_RepositorioGenerico_GetByIdAsNoTracking_RetornarSucesso()
+        {
+            var personRepository = new PersonRepository(_context);
+
+            string name = "Patrícia";
+
+            var person = Person.Create(name, DateTime.UtcNow, EPersonGender.Other, null);
+
+            personRepository.Add(person);
+
+            await _context.SaveChangesAsync();
+
+            var foundPerson = personRepository.GetById(person.Id, asNoTracking: true);
+
+            string newName = "Patrícia Silva";
+
+            foundPerson.UpdateName(newName);
+
+            await _context.SaveChangesAsync();
+
+            var foundPerson2 = personRepository.GetById(person.Id);
+
+            foundPerson2.Name.ShouldBe(name);
+        }
+
+        [Fact]
         public async Task Dado_RepositorioGenerico_GetByIdAsync_RetornarSucesso()
         {
             var personRepository = new PersonRepository(_context);
@@ -80,6 +106,34 @@ namespace SmartEF.Testes
             var foundPerson = await personRepository.GetByIdAsync(person.Id);
 
             foundPerson.ShouldNotBeNull();
+        }
+
+        [Fact]
+        public async Task Dado_RepositorioGenerico_GetByIdAsyncAsNoTracking_RetornarSucesso()
+        {
+            var personRepository = new PersonRepository(_context);
+
+            string name = "Olivia";
+
+            var person = Person.Create(name, DateTime.UtcNow, EPersonGender.Other, null);
+
+            personRepository.Add(person);
+
+            await _context.SaveChangesAsync();
+
+            var foundPerson = await personRepository.GetByIdAsync(person.Id, asNoTracking: true);
+
+            foundPerson.ShouldNotBeNull();
+
+            string newName = "Olivia Silva";
+
+            foundPerson.UpdateName(newName);
+
+            await _context.SaveChangesAsync();
+
+            var foundPerson2 = personRepository.GetById(person.Id);
+
+            foundPerson2.Name.ShouldBe(name);
         }
 
         [Fact]

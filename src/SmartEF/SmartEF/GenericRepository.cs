@@ -53,9 +53,27 @@ namespace SmartEF
             return _entity.FirstOrDefault(p => p.Id == id);
         }
 
+        public TEntity GetById(int id, bool asNoTracking)
+        {
+            var records = asNoTracking ?
+                _entity.AsNoTracking().Where(p => p.Id == id).AsQueryable() :
+                _entity.Where(p => p.Id == id).AsQueryable();
+
+            return records.FirstOrDefault(p => p.Id == id);
+        }
+
         public async Task<TEntity> GetByIdAsync(int id)
         {
             return await _entity.FirstOrDefaultAsync(p => p.Id == id);
+        }
+
+        public async Task<TEntity> GetByIdAsync(int id, bool asNoTracking)
+        {
+            var records = asNoTracking ?
+                _entity.AsNoTracking().Where(p => p.Id == id).AsQueryable() :
+                _entity.Where(p => p.Id == id).AsQueryable();
+
+            return await records.FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public List<TEntity> GetAll()
