@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SmartEF.Testes
 {
     [TestClass]
-    public sealed class UtilsTestes
+    public sealed class UtilsTests
     {
         [TestMethod]
         public void Dado_Tabela_Quando_GetDBTableName_Devo_ObterNomeCorreto()
