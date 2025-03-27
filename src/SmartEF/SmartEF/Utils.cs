@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
+using System.Linq;
 
 namespace SmartEF
 {
     /// <summary>
     /// Helper do dominio.
     /// </summary>
-    public sealed class Helper
+    public static class Utils
     {
         /// <summary>
         /// Get the table name according with passed entity.
